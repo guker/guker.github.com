@@ -1,0 +1,19 @@
+# Site navigation links
+
+- title: 首页
+  url: /
+
+- title: 技术
+  url: /tech/
+  
+- title: 随笔
+  url: /essay/
+  
+- title: 标签
+  url: /tags/
+
+- title: 搜索
+  url: /search/
+
+- title: 关于
+  url: /about/
