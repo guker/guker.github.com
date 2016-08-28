@@ -3,9 +3,6 @@ layout: post
 categories: [tech]
 share: true
 comments: true
-title: "探索线程池"
-date: '2016-08-27'
-tags: [线程]
 title: "并发编程之线程池原理解析"
 date: '2016-08-27'
 tags: [线程,并发]
