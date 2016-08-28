@@ -3,15 +3,12 @@ layout: post
 categories: [tech]
 share: true
 comments: true
-<<<<<<< HEAD
 title: "探索线程池"
 date: '2016-08-27'
 tags: [线程]
-=======
 title: "并发编程之线程池原理解析"
 date: '2016-08-27'
 tags: [线程,并发]
->>>>>>> a33d2f8b6238dfc4d2a7f84fdcd77d111729aa63
 author: hqwsky
 ---
 
