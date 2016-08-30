@@ -10,23 +10,18 @@ tags: [诗歌,文学]
 author: hqwsky
 ---
 
-<div  style="text-align:center">  
-从前慢  
+<p  align="center">从前慢<p>
 
-记得早先少年时  
-大家诚诚恳恳  
-说一句 是一句
+<p  align="center">记得早先少年时<p>
+<p  align="center">大家诚诚恳恳<p>
+<p  align="center">说一句 是一句<p>
 
-清早上火车站  
-长街黑暗无行人  
-卖豆浆的小店冒着热气  
-
-从前的日色变得慢  
-车，马，邮件都慢  
-一生只够爱一个人  
-
-从前的锁也好看  
-钥匙精美有样子  
-你锁了 人家就懂了  
-
-<div>
+<p  align="center">清早上火车站<p>
+<p  align="center">长街黑暗无行人<p>
+<p  align="center">卖豆浆的小店冒着热气<p>
+<p  align="center">从前的日色变得慢<p>
+<p  align="center">车，马，邮件都慢<p>
+<p  align="center">一生只够爱一个人<p>
+<p  align="center">从前的锁也好看<p>
+<p  align="center">钥匙精美有样子<p>
+<p  align="center">你锁了 人家就懂了<p>
