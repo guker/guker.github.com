@@ -116,7 +116,7 @@ author: hqwsky
 #### 说明
 <pre>
    关于git服务器的ssh的说明
-   用户git的下`~/.ssh/authorized_keys` 为受信任列表，此列表可以添加多个ssh客户端的公钥
+   用户git的下``~/.ssh/authorized_keys`` 为受信任列表，此列表可以添加多个ssh客户端的公钥
    当向git服务器添加自己的ssh Public Key(id_RSA.pub)后，服务器便把客户端关联起来，这样，
    客户端可以做到git服务器免密码push以及pull等操作。
 
