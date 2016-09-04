@@ -39,7 +39,7 @@ author: hqwsky
    裸仓库没有工作目录，只能push或pull,本地不能进行commit。
 
 5. 此时若project.git的所有者不是用户git，需要变更所有者与用户组,需要root权限
-    sudo  chown -R  git：git  project.git
+    sudo  chown -R  git:git  project.git
     sudo  chown -R  git:git   /home/git/.ssh
    这样的目的保证用户git对其具有读写执行的权限。
    当然，如果用户git的shell没有被禁用，可以直接登录到git的shell，创建上述的仓库以及
