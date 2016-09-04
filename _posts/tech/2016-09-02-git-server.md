@@ -10,11 +10,11 @@ author: hqwsky
 ---  
 
 ### 服务器端
-
+<pre>
 1. 新建linux用户，命名为git  
     useradd git    # 默认工作目录在/home/git,shell值为bash
     passwd  git    # 设置密码并确认
-<pre>
+
 2. git的数据交互是基于ssh协议的，所以在git用户下新建目录.ssh
     cd  /home/git/
     mkdir .ssh  
