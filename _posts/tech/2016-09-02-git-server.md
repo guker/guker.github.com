@@ -116,7 +116,7 @@ author: hqwsky
 #### 说明
 <pre>
    关于git服务器的ssh的说明
-   用户git的下``~/.ssh/authorized_keys`` 为受信任列表，此列表可以添加多个ssh客户端的公钥
+   用户git的下`~/.ssh/authorized_keys` 为受信任列表，此列表可以添加多个ssh客户端的公钥
    当向git服务器添加自己的ssh Public Key(id_RSA.pub)后，服务器便把客户端关联起来，这样，
    客户端可以做到git服务器免密码push以及pull等操作。
 
@@ -132,13 +132,13 @@ author: hqwsky
 
    常见问题
    在搭建git服务器的时候，遇到如下问题：
-   在客户端用`ssh-keygen -t rsa`生成密钥和公钥，并将生成id_rsa.pub公钥内容追加到服务器
+   在客户端用ssh-keygen -t rsa`生成密钥和公钥，并将生成id_rsa.pub公钥内容追加到服务器
    的`~/.ssh/authorized_keys`中，并且重启服务器的sshd服务，但是客户端采用ssh连接服务器
    依然需要输入密码。
    
    经过google之后，在ssh连接的时候，加-vvT查看输出，进行检查ssh连接的详细过程,一般出现此
    问题都是权限的问题，将.ssh的权限改为700,authorized_keys权限改为600即可
-   `ssh username@xxx.xxx.xxx.xxx`  
+    ssh username@xxx.xxx.xxx.xxx  
    可以免密码建立连接,如果username支持shell，则可以登录到其工作目录下
 </pre>
 
