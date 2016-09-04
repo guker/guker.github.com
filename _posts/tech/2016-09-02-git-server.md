@@ -70,7 +70,7 @@ author: hqwsky
 1. 在工作目录下创建.ssh目录，生成公钥
     mkdir .ssh
     cd .ssh
-    ssh-keygen    # 一路回车即可
+    ssh-keygen -t rsa   # 一路回车即可
    生成两个文件id_rsa文件(密钥)和id_rsa.pub(公钥)
    接下来，把客户端的ssh公钥添加到用户authorized_keys文件中
     scp  ~/.ssh/id_rsa.pub git@yourservername:~/.ssh/  # scp将公钥复制到服务器
@@ -106,7 +106,37 @@ author: hqwsky
 
    当然也可以这样做，直接克隆服务器上的裸仓库
     git clone git@xxx.xxx.xxx.xxx:/home/git/project.git
-   此时不需要指定远端的仓库为origin，默认为origin，这样就可以进行版本控制。
+   此时不需要指定远端的仓库为origin，默认为origin,此外，如果当时第一次通过ssh连接git服务器
+   也会提示连接不能被建立，并生成git服务器的RSA key，然后问你是否继续机建立连接,yes之后，
+   会在.ssh目录下生成known_hosts文件，并把git服务器的RSA key写入known_hosts文件中，下次连接，会
+   跳过警告
+
+</pre>
+
+#### 说明
+<pre>
+   关于git服务器的ssh的说明
+   用户git的下`~/.ssh/authorized_keys` 为受信任列表，此列表可以添加多个ssh客户端的公钥
+   当向git服务器添加自己的ssh Public Key(id_RSA.pub)后，服务器便把客户端关联起来，这样，
+   客户端可以做到git服务器免密码push以及pull等操作。
+
+   具体ssh免密码的原理如下：
+   ssh客户端提前将ssh公钥储存在远程ssh服务器上，然后ssh客户端携带公钥向远程ssh服务器（known_hosts）
+   发起登录请求。
+   远程ssh服务器收到该请求之后，先在该服务器上的authorized_keys寻找你上传授权过的公钥，然后把它和你
+   发送过来的公钥进行比较。
+   如果两个公钥一致（Key Exchange Success），远程SSH服务器会向用户发送一段使用ssh公钥加密过的随机
+   字符串进行身份质询（Challenge）。
+   SSH客户端用自己的私钥解密后再发回给远程ssh服务器，远程ssh服务器对比回包中解密出来的随机字符串是否
+   一致。如果一致，则证明用户（公钥或身份）是可信的，直接允许登录shell，不再要求密码
+
+   常见问题
+   在搭建git服务器的时候，遇到如下问题：
+   在客户端用`ssh-keygen -t rsa`生成密钥和公钥，并将生成id_rsa.pub公钥内容追加到服务器的`~/.ssh/authorized_keys`中，并且重启服务器的sshd服务，但是客户端采用ssh连接服务器依然需要输入密码。
+   
+   经过google之后，在ssh连接的时候，加-vvT查看输出，进行检查ssh连接的详细过程,一般出现此问题都是权限的问题，将.ssh的权限改为700,authorized_keys权限改为600即可
+   `ssh username@xxx.xxx.xxx.xxx`  
+   可以免密码建立连接,如果username支持shell，则可以登录到其工作目录下
 </pre>
 
 
@@ -114,3 +144,4 @@ author: hqwsky
 #### 参考资料
 [git book](https://git-scm.com/book/zh/v2/)  
 [git服务器的建立——Git折腾小记](http://blog.csdn.net/xsl1990/article/details/25486211)
+
