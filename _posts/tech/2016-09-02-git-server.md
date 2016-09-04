@@ -112,5 +112,5 @@ author: hqwsky
 
 
 #### 参考资料
-[git book](https://git-scm.com/book/zh/v2/)
+[git book](https://git-scm.com/book/zh/v2/)  
 [git服务器的建立——Git折腾小记](http://blog.csdn.net/xsl1990/article/details/25486211)
