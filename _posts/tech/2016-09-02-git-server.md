@@ -51,7 +51,8 @@ author: hqwsky
     git:x:533:533::/home/git:/bin/bash # 用户git的工作目录/home/git,shell为bash
    改为：
     git:x:533:533::/home/git:/usr/bin/git-shell 
-   这样用户git可以正常通过ssh使用git,但无法登陆shell,每次登录都会自动退出。这样，用户git只能用ssh连接来推送和获取git仓库，而不能直接使用主机shell。
+   这样用户git可以正常通过ssh使用git,但无法登陆shell,每次登录都会自动退出。这样，用户
+   git只能用ssh连接来推送和获取git仓库，而不能直接使用主机shell。
    NOTE：git-shell的位置
     which git-shell   
 
@@ -106,5 +107,12 @@ author: hqwsky
    当然也可以这样做，直接克隆服务器上的裸仓库
     git clone git@xxx.xxx.xxx.xxx:/home/git/project.git
    此时不需要指定远端的仓库为origin，默认为origin，这样就可以进行版本控制。
+</pre>
 
+
+
+#### 参考资料
+<pre>
+   [git book](https://git-scm.com/book/zh/v2/)
+   [git服务器的建立——Git折腾小记](http://blog.csdn.net/xsl1990/article/details/25486211)
 </pre>
